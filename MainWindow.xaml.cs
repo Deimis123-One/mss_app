@@ -22,6 +22,10 @@ namespace mss_app
     {
         public MainWindow()
         {
+            var viewModel = new ViewModel();
+            viewModel.pageName = "Statistika";
+            DataContext = viewModel;
+
             InitializeComponent();
         }
 
