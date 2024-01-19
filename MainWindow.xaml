@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MSS" Width="1000" Height="700">
 
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -15,14 +16,13 @@
         <Grid.RowDefinitions>
             <RowDefinition  Height="132"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
 
 
         <StackPanel Background="#FF565555" Grid.Row="0">
             <Menu>
-                
+
             </Menu>
             <Label  Content="MSS - Mokesčių skaičiavimo sistema" Foreground="White" Background="#FF565555" FontSize="48" Padding="0 20 0 0" FontFamily="Arial"/>
             <Menu HorizontalAlignment="Right">
@@ -35,14 +35,8 @@
                 <Button Content="Statistika" FontSize="16" Padding="5 2 5 2" Margin="10 1 10 1" />
                 <Button Content="Naudotojai" FontSize="16" Padding="5 2 5 2" Margin="10 1 10 1" />
             </StackPanel>
-            
+
         </StackPanel>
-        <StackPanel Grid.Row="1">
-            <TextBlock Text="{Binding Path=pageName}" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        </StackPanel>
-
-
-
 
     </Grid>
 

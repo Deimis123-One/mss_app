@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace mss_app
 {
-    internal class MainViewModel
+    public interface IPageViewModel
     {
+        string Name { get; }
     }
 }

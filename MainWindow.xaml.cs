@@ -22,9 +22,6 @@ namespace mss_app
     {
         public MainWindow()
         {
-            var viewModel = new ViewModel();
-            viewModel.pageName = "Statistika";
-            DataContext = viewModel;
 
             InitializeComponent();
         }
@@ -33,6 +30,67 @@ namespace mss_app
         {
             this.Close();
             
+        }
+    }
+
+    public class LoginViewModel :ObservableObject
+    {
+        private LoginModel _currentUser;
+        private ICommand _getUserData;
+        private ICommand _saveUserData;
+
+
+        public LoginModel CurrenUser
+        {
+            get { return _currentUser; }
+            set
+            {
+                if (value != null)
+                {
+                    _currentUser = value;
+                    OnPropertyChanged("CurrentUser");
+                }
+            }
+        }
+
+        public ICommand SaveUserDataCommand
+        {
+            get
+            {
+                if (_saveUserData == null)
+                {
+                    _saveUserData = new RelayCommand(
+                        param => SaveUserData(),
+                        param => (_currentUser == null)
+                    );
+                }
+                return _saveUserData;
+            }
+        }
+
+        public ICommand GetUserDataCommand
+        {
+            get
+            {
+                if (_saveUserData == null)
+                {
+                    _saveUserData = new RelayCommand(
+                        param => GetUserData()
+                    );
+                }
+                return _getUserData;
+            }
+        }
+
+        private void SaveUserData()
+        {
+            /// Some code to save user data in class
+        }
+
+        private void GetUserData()
+        {
+            /// Some code to collect user data
+            /// from DB
         }
     }
 }
